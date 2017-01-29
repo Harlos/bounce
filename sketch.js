@@ -1,7 +1,12 @@
 var mem = [];
 var dx, dy;
 var onBall = false;
+var song;
 p5.disableFriendlyErrors = true;
+function preload(){
+  song = loadSound("bum.mp3");
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight-50);
   ball = new Ball();

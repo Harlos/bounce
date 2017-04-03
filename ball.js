@@ -22,11 +22,12 @@ function Ball() {
 
     this.dy > 0 ? this.dy *= 0.98 : this.dy *= 0.98; //air resistance
     this.dx > 0 ? this.dx *= 0.98 : this.dx *= 0.98; //air resistance
-    if (this.y + this.radius >= height && abs(this.dy) <= 0.2)
+    if (this.y + + this.dy + this.radius >= height && abs(this.dy) <= 0.2)
       this.dy = 0; //for not slightly jumping
     else
       this.dy += 1; //gravity 
-    if (this.dx >= -0.2 && this.dx <= 0.2) this.dx = 0; //for not moving slow
+    if abs(this.dx) <= 0.2 
+      this.dx = 0; //for not moving slow
     this.x += this.dx;
     this.y += this.dy;
 
